@@ -3,9 +3,6 @@ package com.seffar.crm.dao.entity;
 import com.seffar.crm.dao.OrderState;
 import jakarta.persistence.*;
 
-import java.lang.Double;
-import java.util.Objects;
-
 @Entity
 @Table(name = "orders")
 public class Order {
@@ -36,14 +33,14 @@ public class Order {
     @Column(nullable = false,columnDefinition = "NUMERIC", insertable = false, updatable = false)
     private Double total_with_taxe;
 
-    @Column(nullable = false)
-    private Integer state;
+    @Column(name = "state", columnDefinition = "int4")
+    private OrderState state;
 
     public Order() {
     }
 
     public Order(String type_presta, String designation, Client client, Integer nb_days, Double unit_price,
-                 Double total_exclude_taxe, Double total_with_taxe, Integer state) {
+                 Double total_exclude_taxe, Double total_with_taxe, OrderState state) {
         this.type_presta = type_presta;
         this.designation = designation;
         this.client = client;
@@ -118,11 +115,11 @@ public class Order {
         this.total_with_taxe = total_with_taxe;
     }
 
-    public Integer getState() {
+    public OrderState getState() {
         return state;
     }
 
-    public void setState(Integer state) {
+    public void setState(OrderState state) {
         this.state = state;
     }
 
