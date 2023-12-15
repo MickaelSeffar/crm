@@ -11,7 +11,7 @@ public class ClientDTO {
     private String last_name;
     private String email;
     private String phone_number;
-    private String adress;
+    private String address;
     private String zip_code;
     private String city;
     private String country;
@@ -59,12 +59,12 @@ public class ClientDTO {
         this.phone_number = phone_number;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getZip_code() {

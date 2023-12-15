@@ -30,9 +30,9 @@ public class OrderService {
         orderRepository.deleteById(id);
     }
 
-    // Attention si l'id dans l'objet cadeau n'existe pas
     // dans la table SQL alors Hibernate va faire un INSERT
-    public void update(Order order){
+    public Order update(Order order){
         orderRepository.save(order);
+        return order;
     }
 }

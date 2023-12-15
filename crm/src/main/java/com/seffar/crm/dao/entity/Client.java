@@ -89,11 +89,11 @@ public class Client {
         this.phone_number = phone_number;
     }
 
-    public String getAdress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAdress(String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 

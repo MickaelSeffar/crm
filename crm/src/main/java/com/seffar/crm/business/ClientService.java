@@ -14,7 +14,7 @@ public class ClientService {
     @Autowired
     ClientRepository clientRepository;
 
-    public List<Client> getCLients() {
+    public List<Client> getclients() {
         return clientRepository.findAll();
     }
 
@@ -22,8 +22,8 @@ public class ClientService {
         return clientRepository.findById(id);
     }
 
-    public void adClient(Client order) {
-        clientRepository.save(order);
+    public void addClient(Client client) {
+        clientRepository.save(client);
     }
 
     public void deleteClient(Integer id) {
@@ -32,8 +32,9 @@ public class ClientService {
 
     // Attention si l'id dans l'objet cadeau n'existe pas
     // dans la table SQL alors Hibernate va faire un INSERT
-    public void update(Client client) {
+    public Client update(Client client) {
         clientRepository.save(client);
+        return client;
     }
 
 }
